@@ -22,8 +22,9 @@ Feature: json place holder validations
     And print 'response: ',response
     And def respuesta = response
     #Assertions
-    And match respuesta[*].name contains "Chelsey Dietrich"
-    And match respuesta[*].address.geo.lng contains "62.5342"
+    And match respuesta[4].name contains 'Chelsey Dietrich'
+    And match respuesta[*].name contains 'Chelsey Dietrich'
+    And match respuesta[3].address.geo.lat contains '29.4572'
+    And match respuesta[*].address.geo.lat contains '29.4572'
     And match respuesta[*].id contains 5
-    And match respuesta[*].id contains '#number'
-    And match respuesta[*].name contains '#string'
+    And match respuesta[4].id contains 5
